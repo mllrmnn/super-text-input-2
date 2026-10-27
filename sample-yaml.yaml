@@ -33,7 +33,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_No styling at all. Just `hide_label: true` for the slim row look._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             placeholder: search...
             hide_label: true
@@ -50,7 +50,7 @@ views:
               touch zone for accessible tap targets, regardless of the icon size.
               Buttons sit ~14 px apart because the touch zones consume the space.
               Recommended for mobile UX._
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             label: default + normal
             compact_buttons: false
@@ -86,7 +86,7 @@ views:
               card padding, tighter editor margins, and small buttons. Everything
               pulled in — the input + buttons sit in a slim row instead of MD's
               default 56 px touch-friendly card._
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             label: compact
             compact_buttons: true
@@ -142,7 +142,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_`update_mode: realtime` with 1 s debounce. Light blue editor background via `style.editor.background`._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             name: my name
             label: enter text
@@ -161,7 +161,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_White pill, transparent editor, bold green leading button that fires a `browser_mod` toast._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             label: Bubble Card
             placeholder: transparent background...
@@ -206,7 +206,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_Slim pill, `vertical-align: center` puts the text in the visual middle, `line-color: transparent` hides the underline. v0.3.15+._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             placeholder: Search…(vertically centered)
             hide_label: true
@@ -253,7 +253,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_Trailing send icon, transparent underline. `padding-bottom: 11 px` lifts the value text into the visual centre without using `vertical-align`._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             placeholder: Ask anything…WhatsApp
             hide_label: true
@@ -290,7 +290,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_Tall dark notes card with blue label + underline. Demonstrates `label-color`, `label-font-size`, `placeholder-color`, `line-color`._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             label: Dark Notes
             placeholder: jot something…
@@ -317,7 +317,7 @@ views:
             heading_style: subtitle
           - type: markdown
             content: '_Outer dim card with a darker inner editor that has its own border-radius. Shows `label-padding-top/left` and asymmetric padding._'
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             label: Artist
             placeholder: text here…
@@ -354,7 +354,7 @@ views:
               buttons off-screen. Now: all 5 stay visible at any width._
           - type: horizontal-stack
             cards:
-              - type: custom:super-text-input
+              - type: custom:super-text-input-2
                 entity: input_text.sti_test
                 placeholder: Bedtijd! Ga je slapen?
                 hide_label: true
@@ -486,7 +486,7 @@ views:
               _New in v0.3.24: pin a card to a fixed `width` or cap it with
               `max-width`. The card on the left is locked to **220 px**; the one
               on the right is capped at **300 px** but free to shrink below that._
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             placeholder: fixed 220 px
             hide_label: true
@@ -502,7 +502,7 @@ views:
                 placeholder-color: '#92400e'
                 line-color: transparent
                 padding-left: 10px
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             placeholder: max 300 px, shrinks below
             hide_label: true
@@ -532,7 +532,7 @@ views:
               background — set `style.card.background: transparent` and `border: none`.
               Useful for embedding into custom layouts where you want only the input +
               buttons to be visible, no card frame._
-          - type: custom:super-text-input
+          - type: custom:super-text-input-2
             entity: input_text.sti_test
             placeholder: no card chrome…
             hide_label: true

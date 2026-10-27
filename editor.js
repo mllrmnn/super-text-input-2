@@ -128,4 +128,4 @@ class SuperTextInputEditor extends BaseCardEditor {
 }
 
 // Register the editor component
-customElements.define("super-text-input-editor", SuperTextInputEditor);
+customElements.define("super-text-input-2-editor", SuperTextInputEditor);

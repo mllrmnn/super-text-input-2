@@ -40,7 +40,7 @@ const INPUT_TAG = customElements.get("ha-input") ? "ha-input" : "ha-textfield";
 
 class SuperTextInput extends LitElement {
 	static getConfigElement() {
-		return document.createElement("super-text-input-editor");
+		return document.createElement("super-text-input-2-editor");
 	}
 
 	static getStubConfig() {
@@ -167,6 +167,7 @@ class SuperTextInput extends LitElement {
 
 		if (this.stateObj) {
 			this.value = this.stateObj.state;
+			this._syncInputValue();
 			this.minlength = this.stateObj.attributes.min;
 			this.maxlength = this.stateObj.attributes.max;
 			this.pattern = this.stateObj.attributes.pattern;
@@ -649,6 +650,23 @@ class SuperTextInput extends LitElement {
 	}
 
 	/**
+	 * Write the entity state straight into the rendered input.
+	 *
+	 * Lit only writes `.value=${this.value}` when this.value actually changes,
+	 * so the visible text can fall out of sync with the entity (e.g. an
+	 * automation changes input_text.* while the card is open). Bypass that
+	 * cache here, but never while the user is focused in the field, so the
+	 * caret and in-progress typing are not overwritten.
+	 */
+	_syncInputValue() {
+		const input = this.shadowRoot?.querySelector("#textinput");
+		if (!input || !this.stateObj) return;
+		if (this.shadowRoot.activeElement === input) return;
+		const state = this.stateObj.state;
+		if (input.value !== state) input.value = state;
+	}
+
+	/**
 	 * Push the new value to Home Assistant.
 	 */
 	setValue(value) {
@@ -681,15 +699,15 @@ class SuperTextInput extends LitElement {
 	}
 }
 
-customElements.define("super-text-input", SuperTextInput);
+customElements.define("super-text-input-2", SuperTextInput);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-	type: "super-text-input",
-	name: "Super Text Input",
+	type: "super-text-input-2",
+	name: "Super Text Input 2",
 	description:
 		"A text input card with enhanced features - real-time input, icons, buttons and actions",
-	preview: "/local/community/super-text-input/preview.png",
+	preview: "/local/community/super-text-input-2/preview.png",
 	configurable: true,
 	version: "0.3.28",
 	customElement: true,

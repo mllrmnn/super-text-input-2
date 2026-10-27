@@ -52,7 +52,7 @@ This repo isn't in the HACS default list yet, but you can install it as a **cust
 
 1. Open HACS in Home Assistant.
 2. Click the **⋮ menu** (top-right) → **Custom repositories**.
-3. **Repository:** `https://github.com/skavan/super-text-input`
+3. **Repository:** `https://github.com/mllrmnn/super-text-input-2`
 4. **Type:** `Dashboard`
 5. Click **Add**.
 6. Find **Super Text Input** in the HACS list and click **Download**.
@@ -63,14 +63,14 @@ When a new release ships, HACS will surface an update notification.
 
 ### Manual install
 
-1. Download the files (`super-text-input.js`, `card-utils.js`, `editor.js`, `base-editor.js`, `preview.png`) to your `config/www/community/super-text-input/` directory.
+1. Download the files (`super-text-input-2.js`, `card-utils.js`, `editor.js`, `base-editor.js`, `preview.png`) to your `config/www/community/super-text-input-2/` directory.
 2. Add the resource in your dashboard configuration. Two ways:
-    - **Using the UI:** _Settings_ → _Dashboards_ → _More Options icon_ → _Resources_ → _Add Resource_ → Set _Url_ to `/local/community/super-text-input/super-text-input.js` → Set _Resource type_ to `JavaScript Module`.
+    - **Using the UI:** _Settings_ → _Dashboards_ → _More Options icon_ → _Resources_ → _Add Resource_ → Set _Url_ to `/local/community/super-text-input-2/super-text-input-2.js` → Set _Resource type_ to `JavaScript Module`.
       **Note:** If you don't see the Resources menu, enable _Advanced Mode_ in your _User Profile_.
     - **Using YAML:** add this to your `lovelace` section.
         ```yaml
         resources:
-          - url: /local/community/super-text-input/super-text-input.js
+          - url: /local/community/super-text-input-2/super-text-input-2.js
             type: module
         ```
 
@@ -79,7 +79,7 @@ When a new release ships, HACS will surface an update notification.
 All props are optional except `type` and `entity`.
 
 ```yaml
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: text.some_entity   # supports input_text and text entities
 name: my name              # optional friendly name
 label: enter text          # floated label above the input
@@ -93,7 +93,7 @@ debounce_time: 1000        # ms to wait in realtime mode before pushing the valu
 A truly minimal one-liner search field:
 
 ```yaml
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.search
 placeholder: search...
 hide_label: true           # slim mode — collapses to a single row, no label area
@@ -121,7 +121,7 @@ hide_label: true           # slim mode — collapses to a single row, no label a
 ### Card and editor styling
 
 ```yaml
-- type: custom:super-text-input
+- type: custom:super-text-input-2
   entity: input_text.sti_test
   label: Bubble Card
   placeholder: transparent background...
@@ -337,7 +337,7 @@ Normal MD-sized buttons, with a decorative bordered info button on the right.
 <img src="images/recipe-2-icons-buttons.png" width="500">
 
 ```yaml
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.sti_test
 label: icons and buttons
 buttons:
@@ -378,7 +378,7 @@ buttons:
 <img src="images/recipe-3-google-pill.png" width="500">
 
 ```yaml
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.sti_test
 placeholder: Search…
 hide_label: true
@@ -425,7 +425,7 @@ Trailing send button only. Slim, rounded, no visible underline.
 <img src="images/recipe-4-whatsapp-pill.png" width="500">
 
 ```yaml
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.sti_test
 placeholder: Ask anything…
 hide_label: true
@@ -462,7 +462,7 @@ Dark card, blue label and underline, light value text.
 <img src="images/recipe-5-dark-notes.png" width="500">
 
 ```yaml
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.sti_test
 label: Dark Notes
 placeholder: jot something…
@@ -488,7 +488,7 @@ Pin a card to a fixed `width`, or cap it with `max-width` so it can still shrink
 
 ```yaml
 # Fixed 220px footprint — never grows, never shrinks
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.sti_test
 placeholder: fixed 220 px
 hide_label: true
@@ -506,7 +506,7 @@ style:
     padding-left: 10px
 
 # Capped at 300px — full width up to 300, shrinks below in narrow tracks
-type: custom:super-text-input
+type: custom:super-text-input-2
 entity: input_text.sti_test
 placeholder: max 300 px, shrinks below
 hide_label: true
@@ -538,4 +538,4 @@ In each case the card itself keeps working — only the affected style key loses
 
 The core card was inspired by [gadgetchnnel/lovelace-text-input-row](https://github.com/gadgetchnnel/lovelace-text-input-row/) and the config options were inspired by [delphiki../base-editor.js](https://github.com/delphiki/lovelace-pronote/blob/742076718f49f4557aee77ebd36bc0dbdd3ad281/src/editors/base-editor.js).
 
-The HA 2026.4+ compatibility work draws on [PR #4 by @DavidCeliis](https://github.com/skavan/super-text-input/pull/4).
+The HA 2026.4+ compatibility work draws on [PR #4 by @DavidCeliis](https://github.com/mllrmnn/super-text-input-2/pull/4).
